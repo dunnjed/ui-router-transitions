@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+  <title>Socket.IO chat</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="vendor/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!--<script>
+    var socket = io();
+  $('form').submit(function(){
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+    return false;
+  });
+
+  </script>-->
+
+</head>
+
+<body>
+  <!--<ul id="messages"></ul>
+  <form action="">
+    <input id="m" autocomplete="off" />
+    <button class="send-button">Send</button>
+  </form>-->
+  <div class="ui-view-container">
+    <div class="main-view" ui-view></div>
+  </div>
+  
+  <script src="vendor/angular.min.js"></script>
+  <script src="vendor/angular-animate.min.js"></script>
+  <script src="vendor/angular-sanitize.min.js"></script>
+  <script src="vendor/angular-ui-router.min.js"></script>
+  <script src="vendor/TweenMax.min.js"></script>
+  
+  <script src="components/app.js"></script>
+</body>
+
+</html>
