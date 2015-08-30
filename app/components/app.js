@@ -31,7 +31,7 @@
 				templateUrl: 'components/about.html',
 				controller: "AboutController",
 				controllerAs: "aboutController",
-				bindToController: true   
+				bindToController: true
 			});
 	});
 
@@ -41,18 +41,46 @@
 		// You can only inject instances (not Providers)
 		// into run blocks
 	});
-	
-	
+
+
 	app.controller("HomeController", function () {
 		var self = this;
-		
+
 	});
-	
+
 	app.controller("AboutController", function () {
 		var self = this;
-		
+
 	});
 
+	app.animation('.main-view', function () {
+		return {
+			enter: function (element, done) {
+				$(element).css({
+					position: 'absolute',
+					'z-index': 100,
+					top: 600,
+					opacity: 0
+				});
+				$(element).animate({
+					top: 0,
+					opacity: 1
+				}, done);
+			},
 
+			leave: function (element, done) {
+				$(element).css({
+					position: 'absolute',
+					'z-index': 101,
+					top: 0,
+					opacity: 1
+				});
+				$(element).animate({
+					top: -600,
+					opacity: 0
+				}, done);
+			}
+		};
+	});
 
 } ());

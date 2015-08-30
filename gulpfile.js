@@ -28,7 +28,7 @@ gulp.task('browser-sync', [/*'nodemon'*/], function() {
 
 gulp.task('default', ['sass', 'browser-sync'], function () {
 	gulp.watch("app/scss/*.scss", ['sass']);
-	gulp.watch(["app/js/**/*.js", "app/**/*.html"], reload);
+	gulp.watch(["app/components/**/*.js", "app/**/*.html"], reload);
 });
 
 
