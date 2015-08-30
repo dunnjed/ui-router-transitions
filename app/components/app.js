@@ -56,7 +56,7 @@
 	app.animation('.main-view', function () {
 		return {
 			enter: function (element, done) {
-				$(element).css({
+				/*$(element).css({
 					position: 'absolute',
 					'z-index': 100,
 					top: 600,
@@ -65,11 +65,37 @@
 				$(element).animate({
 					top: 0,
 					opacity: 1
-				}, done);
+				}, done);*/
+				
+				var duration = 0.5;
+				
+				TweenMax.set(element, {
+					backgroundColor: '#fff',
+					opacity: 0,
+					top: "400px",
+					scaleX: 0.3,
+					scaleY: 0.3
+				});
+				
+				TweenMax.to(element, duration, {
+					delay: 0.5,
+					top: "50px",
+					opacity: 1,
+					scaleX: 1,
+					scaleY: 1,
+					ease: Power4.easeOut,
+					onComplete: done
+				});
+				
+				TweenMax.to(element, duration, {
+					delay: 0.5,
+					opacity: 1,
+					onComplete: done
+				});
 			},
 
 			leave: function (element, done) {
-				$(element).css({
+				/*$(element).css({
 					position: 'absolute',
 					'z-index': 101,
 					top: 0,
@@ -78,7 +104,18 @@
 				$(element).animate({
 					top: -600,
 					opacity: 0
-				}, done);
+				}, done);*/
+				var duration = 0.2;
+				
+				TweenMax.to(element, duration, {
+					delay: 0.3,
+					top: "400px",
+					opacity: 0,
+					scaleX: 0.3,
+					scaleY: 0.3,
+					ease: Power4.easeIn,
+					onComplete: done
+				});
 			}
 		};
 	});
