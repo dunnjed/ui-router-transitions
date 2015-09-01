@@ -6,16 +6,11 @@
 		"ngAnimate"
 	]);
 
-	app.config(function ($stateProvider, $urlRouterProvider) { // provider-injector
-		// This is an example of config block.
-		// You can have as many of these as you want.
-		// You can only inject Providers (not instances)
-		// into config blocks.
+	app.config(function ($stateProvider, $urlRouterProvider) { 
 		$urlRouterProvider.otherwise('/home');
 
 		$stateProvider
         
-        // HOME STATES AND NESTED VIEWS ========================================
 			.state('home', {
 				url: '/home',
 				templateUrl: 'components/home.html',
@@ -24,9 +19,7 @@
 				bindToController: true
 			})
         
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
 			.state('about', {
-				// we'll get to this in a bit
 				url: '/about',
 				templateUrl: 'components/about.html',
 				controller: "AboutController",
